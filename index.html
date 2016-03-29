@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Get-git by the-factory</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Get-git</h1>
+        <h2>Chrome extension that spots web accessible Git repos.</h2>
+        <a href="https://github.com/the-factory/get-git" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="this-project-is-deprecated-and-no-longer-maintained-please-use-bishop-the-successor-to-get-git-which-contains-all-get-gits-functionality-and-more" class="anchor" href="#this-project-is-deprecated-and-no-longer-maintained-please-use-bishop-the-successor-to-get-git-which-contains-all-get-gits-functionality-and-more" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>This project is deprecated and no longer maintained. Please use <a href="https://github.com/jkingsman/Bishop">Bishop</a>, the successor to Get Git (which contains all Get Git's functionality and more).</h1>
+
+<h1>
+<a id="get-git" class="anchor" href="#get-git" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get Git</h1>
+
+<p>Get Git is a Chrome extension that lets you know when you're on a site with a misconfigured, web accessible .git directory.</p>
+
+<p><a href="https://chrome.google.com/webstore/detail/agddmammmnpdglmincfngjfnehmopoln"><img src="https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_340x96.png" alt="Image of Chrome Store Badge"></a></p>
+
+<h1>
+<a id="what-it-is" class="anchor" href="#what-it-is" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What It Is</h1>
+
+<p>Inspired by <a href="http://www.slideshare.net/kost/ripping-web-accessible-git-files">this set of slides by Vlatko Kostujak</a>, I wondered how many websites I browsed each day that had misconfigured Git repos with a web accessible <code>.git</code> -- meaning I had full access to their source code, past and present.</p>
+
+<p>I wasn't interested in nmapping every site I browsed, but what I didn't mind was a few exta 404's on the sites I visited - thus Get Git was born.</p>
+
+<p>Get Git combs websites that you browse, looking for exposed <code>.git</code> directories. By looking for the files that should be <em>in</em> a <code>.git</code> directory, and not the directory itself, it can find repos even if directory listing is turned off. If it finds one, it optionally alerts the user and saves the URL for later viewing (visible on the extension's Options page). If, for some reason, you happen to browse extremely high volumes of vulnerable sites, Get Git supports exporting the list of sites in JSON for processing by other utilities.</p>
+
+<p>This extension was built to run quietly in the background, but on the recursive option, it does traverse websites from the current URL all the way back to the web root, potentially leading to a number of 404's and background XHR requests. If this isn't okay with you, you can disable the recursive searching (or, if you're in a metered data usage environment, disable the extension easily throgh the options page or the popup window).</p>
+
+<h1>
+<a id="criteria-for-a-repo" class="anchor" href="#criteria-for-a-repo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Criteria for a Repo</h1>
+
+<p>For an URL to be entered as a repo, it must meet all of the following criteria:</p>
+
+<ul>
+<li>an HTTP 200 response to a request for <code>.git/HEAD</code>
+</li>
+<li>the presence of the string "ref: " in that response</li>
+<li>an HTTP 200 response to a request for <code>.git/config</code>
+</li>
+<li>the presence of the string "[core]" in that response</li>
+</ul>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h1>
+
+<p>MIT</p>
+
+<hr>
+
+<p><a href="https://flattr.com/submit/auto?user_id=jkingsman&amp;url=https%3A%2F%2Fgithub.com%2Fjkingsman%2Fget-git"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a> </p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/the-factory/get-git/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/the-factory/get-git/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/the-factory/get-git"></a> is maintained by <a href="https://github.com/the-factory">the-factory</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
